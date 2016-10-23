@@ -1,0 +1,10 @@
+// Placez vos paramètres dans ce fichier pour remplacer les paramètres par défaut et les paramètres utilisateur.
+{
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    /* you have to install Format on save VSC Extension ;) */
+    "formatOnSave.on": true,
+    /* The extensions array which will apply */
+    "formatOnSave.extensions": [
+        "*"
+    ]
+}

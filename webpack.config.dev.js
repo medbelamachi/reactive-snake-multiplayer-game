@@ -11,6 +11,11 @@ export default {
     path.resolve(__dirname, 'src/index')
   ],
   target: 'web',
+  resolve: {
+        root: [path.resolve("../src")],
+        extensions: ['', '.Webpack.js', '.web.js', '.ts', '.tsx','.js', '.jsx', '.css'],
+        modulesDirectories: ['src', 'node_modules']
+  },
   output: {
     path: __dirname + '/dist', // Note: Physical files are only output by the production build task `npm run build`.
     publicPath: '/',
@@ -26,6 +31,7 @@ export default {
   module: {
     loaders: [
       {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel']},
+      {test: /\.tsx?$/,exclude: /(node_modules|bower_components)/,loader: ['babel', 'ts-loader']},
       {test: /(\.css)$/, loaders: ['style', 'css']},
       {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
       {test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000'},

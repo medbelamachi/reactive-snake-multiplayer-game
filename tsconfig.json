@@ -1,22 +1,16 @@
 {
   "compilerOptions": {
-    "module": "es6",
-    "target": "es6",
-    "moduleResolution": "node",
-    "baseUrl": "src",
-    "allowSyntheticDefaultImports": true,
+    "target": "ES5",
+    "module": "commonjs",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "noImplicitAny": false,
-    "strictNullChecks": true,
     "sourceMap": true,
-    "outDir": "build",
-    "jsx": "react",
-    "typeRoots": [ "node_modules/@types/", "type-declarations/" ],
-    "types": [ "react", "react-dom", "mocha", "chai", "sinon"]
+    "noEmitHelpers": true
   },
-  "exclude": [
-    "node_modules",
-    "build"
-  ]
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "awesomeTypescriptLoaderOptions": {
+    "forkChecker": true,
+    "useWebpackText": true
+  }
 }

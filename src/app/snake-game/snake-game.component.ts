@@ -10,7 +10,11 @@ import { Vector } from '../shared';
   styleUrls: ['./snake-game.component.scss']
 })
 export class SnakeGameComponent implements OnInit {
-  public vector: Vector = new Vector(20, 20);
+
+  boardSize: Vector = new Vector(20, 10);
+  snakePositions: Vector[] = [new Vector(0, 0)];
+  fruitPosition: Vector = Vector.random(this.boardSize);
+
   constructor() {
   }
 

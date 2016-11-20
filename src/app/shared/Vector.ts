@@ -1,4 +1,4 @@
-export  class Vector {
+export class Vector {
     public x: Number;
     public y: Number;
     constructor(x, y) {

@@ -4,7 +4,8 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { BoardComponent } from './board/board.component';
+import { SnakeGameComponent } from './snake-game/snake-game.component';
 import { AboutComponent } from './about/about.component';
 import { ApiService } from './shared';
 import { routing } from './app.routing';
@@ -20,7 +21,8 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
   ],
   declarations: [
     AppComponent,
-    HomeComponent,
+    SnakeGameComponent,
+    BoardComponent,
     AboutComponent
   ],
   providers: [
@@ -29,7 +31,7 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(public appRef: ApplicationRef) {}
+  constructor(public appRef: ApplicationRef) { }
   hmrOnInit(store) {
     console.log('HMR store', store);
   }

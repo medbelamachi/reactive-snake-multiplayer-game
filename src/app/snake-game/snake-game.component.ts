@@ -37,13 +37,19 @@ export class SnakeGameComponent implements OnInit {
     const keys = Bacon.fromEvent(document.body, 'keyup').map('.keyCode');
     const lefts = keys.filter(key => key === 37);
     const rights = keys.filter(key => key === 39);
-    return { ticks, lefts, rights };
+    const up = keys.filter(key => key === 38);
+    const down = keys.filter(key => key === 40);
+    return { ticks, lefts, rights, up, down };
   }
 
-  snakeHeadPositions({ ticks, lefts, rights }) {
+  snakeHeadPositions({ ticks, lefts, rights, up, down }) {
     const leftRotations = lefts.map(() => Vector.rotateLeft);
     const rightRotations = rights.map(() => Vector.rotateRight);
-    const actions = leftRotations.merge(rightRotations);
+    const upRotations = up.map(() => Vector.rotateUp);
+    const downRotations = down.map(() => Vector.rotateDown);
+    const actions1 = leftRotations.merge(rightRotations);
+    const actions2 = upRotations.merge(downRotations);
+    const actions = actions1.merge(actions2);
 
     const directions = actions.scan(this.initialSnakeDirection, (dir, f) => f(dir));
     return directions

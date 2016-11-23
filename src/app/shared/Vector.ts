@@ -32,4 +32,12 @@ export  class Vector {
     static rotateLeft(vec) {
         return new Vector(vec.y, -vec.x);
     }
+
+    static rotateUp(vec) {
+        return new Vector(vec.y, vec.x);
+    }
+
+    static rotateDown(vec) {
+        return new Vector(-vec.y, -vec.x);
+    }
 }

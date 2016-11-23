@@ -27,6 +27,8 @@ export class SnakeGameComponent implements OnInit {
       return validSnake;
     });
     snakes.onValue(snake => this.snakePositions = snake);
+    const snakeEats = snakeHeadPositions.filter(snake => snake.equals(this.fruitPosition));
+    snakeEats.onValue(() => { this.score ++  ; this.fruitPosition = Vector.random(this.boardSize);});
   }
 
 
